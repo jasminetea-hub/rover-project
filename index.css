@@ -1,0 +1,213 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("05HomuraM-SemiBold.otf");
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  /* スクロール禁止 */
+}
+
+body {
+  background-image: url("背景.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  font-family: "MyFont";
+}
+
+/* 左上ヘッディング */
+.top-left-heading {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 58px;
+  font-weight: bold;
+  color: #580505;
+}
+
+/* コンテナ中央寄せ */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 10px;
+  position: relative;
+}
+
+/* 説明文 */
+.center-heading {
+  font-size: 35px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 0 10px 0;
+  color: #580505;
+}
+
+/* 入力ボックス */
+.box-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.input-box-long {
+  width: 80%;
+  max-width: 400px;
+  /* 固定幅から可変へ */
+  height: 60px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  box-sizing: border-box;
+  background-image: url("ボタン背景.jpeg");
+}
+
+.input-box-long::placeholder {
+  font-size: 20px;
+  color: #999;
+}
+
+/* 文字ボタンを包むコンテナ */
+.letters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* 中央揃え */
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 95vw;
+  /* iPad幅対応 */
+  padding: 0 5px;
+  margin-bottom: 25px;
+  box-sizing: border-box;
+}
+
+/* 文字ボタン */
+.letter-button {
+  display: flex;
+  /* フレックスで中央揃え */
+  justify-content: center;
+  /* 横方向中央 */
+  align-items: center;
+  /* 縦方向中央 */
+  min-width: 48px;
+  height: 48px;
+  /* 高さを固定（可変でも可） */
+  padding: 0 14px;
+  /* 左右対称のパディング */
+  font-size: 28px;
+  border: 0.5px solid #333;
+  border-radius: 8px;
+  cursor: pointer;
+  background-image: url("ボタン背景.jpeg");
+  color: #fff;
+  box-sizing: border-box;
+  text-align: center;
+  /* 念のため中央揃え */
+  line-height: 1;
+  /* フォントの余白を抑える */
+}
+
+/* 決定ボタン */
+.navigate-button {
+  padding: 10px 24px;
+  font-size: 30px;
+  border: 0.5px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #580505;
+  cursor: pointer;
+  font-family: "MyFont";
+}
+
+/* メッセージ類 */
+.hidden {
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.answer,
+.error {
+  width: 100%;
+  font-size: 160px;
+  font-family: "MyFont";
+  color: #D5A167;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  animation: fadeIn 2s ease-out, fadeOut 2s 2s ease-in forwards;
+  opacity: 0;
+  z-index: 20;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+/* 削除ボタン */
+.delete-button {
+  width: 50px;
+  height: 50px;
+  font-size: 26px;
+  font-weight: bold;
+  border: 0.1px solid #D5A167;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  color: #D5A167;
+}
+
+/* --- iPad・小画面向け調整 --- */
+@media (max-width: 1024px) {
+  .letter-button {
+    font-size: 24px;
+    padding: 8px 10px;
+  }
+
+  .input-box-long {
+    width: 90%;
+  }
+
+  .center-heading {
+    font-size: 28px;
+  }
+}
