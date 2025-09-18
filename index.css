@@ -65,7 +65,7 @@ body {
   max-width: 400px;
   /* 固定幅から可変へ */
   height: 60px;
-  border-radius: 8px;
+  border-radius: 5px;
   text-align: center;
   font-size: 28px;
   font-weight: bold;
@@ -126,10 +126,10 @@ body {
   font-size: 30px;
   border: 0.5px solid black;
   border-radius: 10px;
-  background-color: #fff;
-  color: #580505;
+  color: #fff;
   cursor: pointer;
   font-family: "MyFont";
+  background-image: url("ボタン背景.jpeg");
 }
 
 /* メッセージ類 */
@@ -152,7 +152,7 @@ body {
   width: 100%;
   font-size: 160px;
   font-family: "MyFont";
-  color: #D5A167;
+  color: #580505;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -189,11 +189,11 @@ body {
   height: 50px;
   font-size: 26px;
   font-weight: bold;
-  border: 0.1px solid #D5A167;
-  border-radius: 10px;
-  background-color: #fff;
+  border: 0.1px solid #580505;
+  border-radius: 5px;
+  background-image: url("ボタン背景.jpeg");
   cursor: pointer;
-  color: #D5A167;
+  color: #580505;
 }
 
 /* --- iPad・小画面向け調整 --- */
